@@ -38,6 +38,7 @@ Route::middleware([
     })->name('dashboard');
     // Line
     Route::get('/line/test', [TestController::class, 'index'])->name('line.test.index');
+    Route::get('/line/union', [TestController::class, 'union'])->name('line.test.union');
     // livewireチュートリアル
     Route::get('livewire-tutorial/todos/create', TodoCreate::class)->name('livewire-tutorial.todos.create');
     Route::get('livewire-tutorial/todos', TodoList::class)->name('livewire-tutorial.todos');
