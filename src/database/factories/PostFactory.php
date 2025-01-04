@@ -2,30 +2,31 @@
 
 namespace Database\Factories;
 
-use App\Models\Team;
-use App\Models\User;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TeamFactory extends Factory
+/**
+ * @extends Factory<Post>
+ */
+class PostFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Team::class;
+    protected $model = Post::class;
 
     /**
      * Define the model's default state.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function definition(): array
     {
         return [
-            'name' => $this->faker->company(),
-            'user_id' => 1,
-            'personal_team' => true,
+            //
+            'name' => $this->faker->name(),
         ];
     }
 }

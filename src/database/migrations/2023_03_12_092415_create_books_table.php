@@ -8,16 +8,12 @@ return new class() extends Migration {
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('team_user', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('team_id');
-            $table->string('role')->nullable();
+            $table->string('name');
             $table->timestamps();
-
-            $table->unique(['team_id', 'user_id']);
         });
     }
 
@@ -26,6 +22,6 @@ return new class() extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('team_user');
+        Schema::dropIfExists('books');
     }
 };
